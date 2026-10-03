@@ -70,5 +70,5 @@
 ## Файлы проекта
 - Рабочая папка: `C:\Projects\MyCSMap`.
 - Git: Gitea `ALEXaloysha/CSMap`, ветка `main`.
-- `README.md` — краткое описание для Gitea.
+- `README.md` и `README.ru.md` — описание на английском и русском (что не входит в публичную версию на GitHub, см. там).
 - `de_mygame/` — копия содержимого аддона (`.vmap`, материалы, звуки, RadGen-проект, радар).
