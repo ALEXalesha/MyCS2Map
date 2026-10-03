@@ -20,7 +20,7 @@ A map for **Counter-Strike 2**, made in Source 2 / Hammer.
 - **`de_zarya-design.md`** - the full design document (in Russian): the theme, the layout, the principles, what is done, open tasks and the pitfalls already hit (compiling, spawns, lighting, nav mesh, bots). The file name is historical: the map used to be called de_Zarya.
 - **`de_mygame/`** - the CS2 addon content, a copy of `content/csgo_addons/de_mygame/`:
   - `maps/` - the map `de_hum.vmap` and the radar project `de_hum.radgen`;
-  - `materials/`, `postprocess/`, `panorama/` (the map radar);
+  - `postprocess/`, `panorama/` (the map radar);
   - `soundevents/` - the map's sound events; for the sounds themselves see below.
 - **`image-1784219049433.png`** - the project icon.
 - **`tools/publish_github.sh`** - builds the public copy for GitHub.
