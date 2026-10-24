@@ -2,6 +2,8 @@
 
 [English](README.md) · **Русский**
 
+[![Status](https://img.shields.io/badge/status-stable-brightgreen)](#) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![CS2](https://img.shields.io/badge/Counter--Strike_2-map-1B2838?logo=counterstrike&logoColor=white)](https://store.steampowered.com/app/730/)
+
 ![de_Hum](image-1784219049433.png)
 
 Карта для **Counter-Strike 2**, сделана в Source 2 / Hammer.
