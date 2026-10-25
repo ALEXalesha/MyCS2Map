@@ -4,7 +4,7 @@
 
 [![Status](https://img.shields.io/badge/status-stable-brightgreen)](#) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![CS2](https://img.shields.io/badge/Counter--Strike_2-map-1B2838?logo=counterstrike&logoColor=white)](https://store.steampowered.com/app/730/)
 
-![de_Hum](image-1784219049433.png)
+![de_Hum](icon.png)
 
 A map for **Counter-Strike 2**, made in Source 2 / Hammer.
 
@@ -24,7 +24,7 @@ A map for **Counter-Strike 2**, made in Source 2 / Hammer.
   - `maps/` - the map `de_hum.vmap` and the radar project `de_hum.radgen`;
   - `postprocess/`, `panorama/` (the map radar);
   - `soundevents/` - the map's sound events; for the sounds themselves see below.
-- **`image-1784219049433.png`** - the project icon.
+- **`icon.png`** - the project icon.
 - **`tools/publish_github.sh`** - builds the public copy for GitHub.
 
 ## Not included in the public version

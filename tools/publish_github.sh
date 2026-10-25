@@ -21,7 +21,7 @@
 #   - the author's e-mail       -> the GitHub account's noreply address;
 #   - the Gitea server address  -> gitea.local;
 #   - the full name / surname   -> the nick ALEXalesha (plus git config publish.privateExtra);
-#   - the local projects folder -> C:\Projects;
+#   - the local projects folder -> C:\Projects, the Drive folder in any spelling -> Projects;
 #   - Steam user ids from this PC -> 0.
 # None of these strings is written here: the e-mail comes from git config user.email,
 # the address from remote origin, the name from git config publish.privateName and
@@ -87,7 +87,16 @@ for pair in "${PAIRS[@]}"; do
   printf 's/%s/%s/gI\n' "$(esc "$priv")" "$(printf '%s' "$pub" | sed 's/[\/&]/\\&/g')" >> "$SEDFILE"
   printf '%s\n' "$priv" >> "$GREPFILE"
 done
-echo "private strings to replace: ${#PAIRS[@]}"
+# The Drive folder on this PC in any spelling (C:\..., /c/..., C--...-), also where the
+# repository used to live: the list above only knows the current parent folder. Only the
+# first name goes into the pattern, and it is assembled from pieces, so the path itself
+# is not written in any file.
+PN=Ale; PN="${PN}xey"
+PATH_RE='drive([\/]+|-+)'"$PN"
+printf '%s\n' 's#([a-z]:|/[a-z])([\/]+)drive[\/]+'"$PN"'#\1\2Projects#gI' \
+  's#([a-z])--drive-+'"$PN"'#\1--Projects#gI' \
+  's#drive([\/]+|-+)'"$PN"'#Projects#gI' >> "$SEDFILE"
+echo "private strings to replace: ${#PAIRS[@]} + the Drive folder pattern"
 
 git remote get-url github >/dev/null 2>&1 || git remote add github "https://github.com/$REPO.git"
 
@@ -108,6 +117,8 @@ git update-ref -d refs/original/refs/heads/github-main 2>/dev/null || true
 # would stop here silently.
 DIRTY=$(git grep -I -i -l -F -f "$GREPFILE" $(git rev-list github-main) -- 2>/dev/null \
         | sed 's/^[^:]*://' | sort -u | tr '\n' ' ' || true)
+DIRTY="$DIRTY$(git grep -I -i -l -E "$PATH_RE" $(git rev-list github-main) -- 2>/dev/null \
+        | sed 's/^[^:]*://' | sort -u | tr '\n' ' ' || true)"
 if [ -n "$DIRTY" ]; then
   echo "private data in files: $DIRTY- rewriting contents"
   FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --index-filter "
@@ -128,6 +139,11 @@ if git log github-main --format='%ae%n%ce%n%an%n%cn%n%B' | grep -q -i -F -f "$GR
 fi
 if git grep -I -q -i -F -f "$GREPFILE" $(git rev-list github-main) -- 2>/dev/null; then
   echo "private data left in the files of the published history - push cancelled" >&2
+  exit 1
+fi
+if git log github-main --format='%B' | grep -q -i -E "$PATH_RE" \
+   || git grep -I -q -i -E "$PATH_RE" $(git rev-list github-main) -- 2>/dev/null; then
+  echo "the Drive folder path left in the published history - push cancelled" >&2
   exit 1
 fi
 if [ -n "$(git log github-main --format= --name-only -- $THIRD_PARTY | head -1 || true)" ]; then

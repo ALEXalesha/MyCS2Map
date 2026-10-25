@@ -4,7 +4,7 @@
 
 [![Status](https://img.shields.io/badge/status-stable-brightgreen)](#) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![CS2](https://img.shields.io/badge/Counter--Strike_2-map-1B2838?logo=counterstrike&logoColor=white)](https://store.steampowered.com/app/730/)
 
-![de_Hum](image-1784219049433.png)
+![de_Hum](icon.png)
 
 Карта для **Counter-Strike 2**, сделана в Source 2 / Hammer.
 
@@ -19,30 +19,30 @@
 
 ## Что в репозитории
 
-- **`de_zarya-design.md`** — полный дизайн-документ: идея темы, схема, принципы, что сделано, открытые задачи и пройденные грабли (компиляция, спавны, свет, nav mesh, боты). Название в имени файла историческое: раньше карта называлась de_Zarya.
-- **`de_mygame/`** — содержимое аддона CS2, копия из `content/csgo_addons/de_mygame/`:
-  - `maps/` — карта `de_hum.vmap` и проект радара `de_hum.radgen`;
+- **`de_zarya-design.md`** - полный дизайн-документ: идея темы, схема, принципы, что сделано, открытые задачи и пройденные грабли (компиляция, спавны, свет, nav mesh, боты). Название в имени файла историческое: раньше карта называлась de_Zarya.
+- **`de_mygame/`** - содержимое аддона CS2, копия из `content/csgo_addons/de_mygame/`:
+  - `maps/` - карта `de_hum.vmap` и проект радара `de_hum.radgen`;
   - `postprocess/`, `panorama/` (радар карты);
-  - `soundevents/` — описание звуков карты, сами звуки см. ниже.
-- **`image-1784219049433.png`** — иконка проекта.
-- **`tools/publish_github.sh`** — сборка публичной копии для GitHub.
+  - `soundevents/` - описание звуков карты, сами звуки см. ниже.
+- **`icon.png`** - иконка проекта.
+- **`tools/publish_github.sh`** - сборка публичной копии для GitHub.
 
 ## Чего нет в публичной версии
 
 Рабочая копия живёт на домашнем Gitea. В публичную версию на GitHub не попадает чужое, у чего мы не можем подтвердить лицензию. Оно убрано из всей опубликованной истории, не только из последнего коммита:
 
-- **`de_mygame/sounds/`** — звуки (птицы, вентиляция, гул помещения) **взяты из Steam Workshop**, их авторы и лицензии нам неизвестны. `soundevents_addon.vsndevts` ссылается на них по именам: `sounds/bird_01.vsnd` … `bird_06.vsnd`, `sounds/interior_01.vsnd` (гул помещения), `sounds/vent_01.vsnd` (вентиляция). Положите свои `.wav` с этими именами в `de_mygame/sounds/`, и Hammer соберёт их сам.
-- **`de_mygame/RadGen/RadGen3.sbsar`** и **`de_mygame/materials/radgen/`** — файлы стороннего инструмента RadGen (генератор радара). Скачайте RadGen у его автора и поставьте по его инструкции.
-- **`de_mygame/maps/content_examples/`** — пример от Valve из Workshop Tools, он есть у каждого, кто поставил инструменты.
+- **`de_mygame/sounds/`** - звуки (птицы, вентиляция, гул помещения) **взяты из Steam Workshop**, их авторы и лицензии нам неизвестны. `soundevents_addon.vsndevts` ссылается на них по именам: `sounds/bird_01.vsnd` … `bird_06.vsnd`, `sounds/interior_01.vsnd` (гул помещения), `sounds/vent_01.vsnd` (вентиляция). Положите свои `.wav` с этими именами в `de_mygame/sounds/`, и Hammer соберёт их сам.
+- **`de_mygame/RadGen/RadGen3.sbsar`** и **`de_mygame/materials/radgen/`** - файлы стороннего инструмента RadGen (генератор радара). Скачайте RadGen у его автора и поставьте по его инструкции.
+- **`de_mygame/maps/content_examples/`** - пример от Valve из Workshop Tools, он есть у каждого, кто поставил инструменты.
 
 ## Как собрать и запустить
 
 - Аддон в Workshop Tools называется `de_mygame`. Имя файла карты менять не стали.
 - Hammer: Workshop Tools → Launch Tools → Asset Browser → иконка Hammer.
 - Компиляция: `F9` → Build Map → **Fast Compile** (без света, быстро) или **Full Compile** (со светом и кубмапами).
-- Запуск для теста с ботами — обычный CS2, не режим `-tools`. Консоль: `map_workshop de_mygame de_hum`.
+- Запуск для теста с ботами - обычный CS2, не режим `-tools`. Консоль: `map_workshop de_mygame de_hum`.
 
-## Главные грабли (подробно — в дизайн-документе)
+## Главные грабли (подробно - в дизайн-документе)
 
 - Спавны T и CT должны стоять минимум на 16 юнитов над полом, иначе движок считает их неверными.
 - Нужна точка `info_player_start` в дополнение к спавнам T и CT.
@@ -60,4 +60,4 @@
 
 ## Лицензия
 
-Наши файлы (карта, материалы, радар, документы, иконка, скрипт) — MIT, см. [LICENSE](LICENSE). Звуки и файлы RadGen в публичную версию не входят и под эту лицензию не подпадают.
+Наши файлы (карта, материалы, радар, документы, иконка, скрипт) - MIT, см. [LICENSE](LICENSE). Звуки и файлы RadGen в публичную версию не входят и под эту лицензию не подпадают.

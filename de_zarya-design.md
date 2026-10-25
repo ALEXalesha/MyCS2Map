@@ -68,7 +68,7 @@
 - **Чёрные руки/оружие** — отсутствие Light Probe Volume/Cubemap (`env_combined_light_probe_volume`). У сущности куб (Box Mins/Box Maxs, тянуть за хендлы) и сфера (радиус, через Transform→Scale) — независимые параметры, легко перепутать.
 
 ## Файлы проекта
-- Рабочая папка: `C:\Projects\MyCSMap`.
+- Рабочая папка: `Projects\Mods\MyCSMap` (папка проектов на ПК).
 - Git: Gitea `ALEXaloysha/CSMap`, ветка `main`.
 - `README.md` и `README.ru.md` — описание на английском и русском (что не входит в публичную версию на GitHub, см. там).
 - `de_mygame/` — копия содержимого аддона (`.vmap`, материалы, звуки, RadGen-проект, радар).
