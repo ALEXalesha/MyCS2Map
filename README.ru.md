@@ -2,7 +2,9 @@
 
 [English](README.md) · **Русский**
 
-[![Status](https://img.shields.io/badge/status-stable-brightgreen)](#) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![CS2](https://img.shields.io/badge/Counter--Strike_2-map-1B2838?logo=counterstrike&logoColor=white)](https://store.steampowered.com/app/730/)
+[![Status](https://img.shields.io/badge/status-stable-brightgreen)](#) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![CS2](https://img.shields.io/badge/Counter--Strike_2-map-1B2838?logo=counterstrike&logoColor=white)](https://store.steampowered.com/app/730/) [![Built with Claude Code](https://img.shields.io/badge/Built_with-Claude_Code-D97757?logo=claude&logoColor=white)](https://claude.com/claude-code)
+
+Карту сделал Алексей в Hammer. Остальное - документацию и скрипт публикации - написал Claude (Anthropic) в Claude Code.
 
 ![de_Hum](icon.png)
 
@@ -48,7 +50,7 @@
 - Нужна точка `info_player_start` в дополнение к спавнам T и CT.
 - Коробка карты должна быть полностью замкнута, иначе при компиляции будет `leak`.
 - Nav mesh не генерируется с ошибкой «no walkable seeds»: нужна сущность `point_nav_walkable`.
-- Навык ботов меняет `custom_bot_difficulty 0–3`. `bot_difficulty` на него не влияет.
+- Навык ботов меняет `custom_bot_difficulty 0-3`. `bot_difficulty` на него не влияет.
 - Чёрные руки и оружие лечатся объёмом `env_combined_light_probe_volume`.
 - Радар в Workshop может разойтись с локальным, если опубликовать карту до `Save Radar Image` в RadGen.
 
