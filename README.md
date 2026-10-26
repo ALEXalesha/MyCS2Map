@@ -2,7 +2,9 @@
 
 **English** · [Русский](README.ru.md)
 
-[![Status](https://img.shields.io/badge/status-stable-brightgreen)](#) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![CS2](https://img.shields.io/badge/Counter--Strike_2-map-1B2838?logo=counterstrike&logoColor=white)](https://store.steampowered.com/app/730/)
+[![Status](https://img.shields.io/badge/status-stable-brightgreen)](#) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![CS2](https://img.shields.io/badge/Counter--Strike_2-map-1B2838?logo=counterstrike&logoColor=white)](https://store.steampowered.com/app/730/) [![Built with Claude Code](https://img.shields.io/badge/Built_with-Claude_Code-D97757?logo=claude&logoColor=white)](https://claude.com/claude-code)
+
+The map is made by Alexey in Hammer. Everything else - the docs and the publishing script - is written by Claude (Anthropic) in Claude Code.
 
 ![de_Hum](icon.png)
 
@@ -48,7 +50,7 @@ The working copy lives on a home Gitea server. Third-party files whose licence w
 - An `info_player_start` is needed in addition to the T and CT spawns.
 - The map box must be fully sealed, otherwise the compile reports a `leak`.
 - If the nav mesh fails with "no walkable seeds", add a `point_nav_walkable` entity.
-- Bot skill is set by `custom_bot_difficulty 0–3`; `bot_difficulty` does not affect it.
+- Bot skill is set by `custom_bot_difficulty 0-3`; `bot_difficulty` does not affect it.
 - Black hands and weapons are fixed with an `env_combined_light_probe_volume`.
 - The Workshop radar can differ from the local one if the map is published before `Save Radar Image` in RadGen.
 
